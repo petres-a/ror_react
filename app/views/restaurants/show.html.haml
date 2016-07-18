@@ -1,0 +1,10 @@
+.row
+  %h1= @restaurant.name
+.row
+  .columns.medium-6
+    %p= @restaurant.description
+  .columns.medium-6
+    %h3 Comment
+    = react_component('CommentList')
+    / - @comments.each do |comment|
+    /   = react_component('Comment', {author: comment.author, body: comment.body, rank: comment.rank})
