@@ -5,6 +5,6 @@
     %p= @restaurant.description
   .columns.medium-6
     %h3 Comment
-    = react_component('CommentList')
+    = react_component('CommentSection', comments: raw(render template: 'comments/index.json.jbuilder'))
     / - @comments.each do |comment|
     /   = react_component('Comment', {author: comment.author, body: comment.body, rank: comment.rank})
